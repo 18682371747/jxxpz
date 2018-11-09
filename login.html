@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html class="pixel-ratio-1">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="theme-color" content="#1f212f">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="cache-control" content="max-age=864000">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="author" content="">
+    <meta name="description" content="">
+    <meta itemprop="name" content="">
+    <meta itemprop="description" content="">
+    <title>聚鑫金服</title>
+</head> 
+
+<body>
+    <div class="logo">
+        <img src="./imgs/logo.png">
+        <h2>聚鑫金服</h2>
+        <div>让贷款 更简单</div>
+    </div>
+    <form action="#" class="hide" id="formSignin" method="post" novalidate="novalidate"
+        style="display:block;">
+        <div class="row">
+            <input class="form-control" data-val="true" data-val-regex="注册手机号格式错误" data-val-regex-pattern="^((\+?\d{2} )?[1-9]\d{10}(-\d{1,4})?)?$"
+                data-val-required="请输入注册手机号" data-val-textlength="请勿超过32个字符" data-val-textlength-doublebytelength="2"
+                data-val-textlength-maximumlength="32" data-val-textlength-minimumlength="0" id="CellPhoneNumber" name="CellPhoneNumber"
+                placeholder="请输入注册手机号（学生请勿注册）" style="padding-right: 50px;" type="number" value="">
+            <a id="linkRegister" href="register.html">注册</a>
+            <span class="field-validation-valid" data-valmsg-for="CellPhoneNumber" data-valmsg-replace="true">
+            </span>
+        </div>
+        <div class="row">
+            <input class="form-control" data-val="true" data-val-password="交易密码格式错误" data-val-password-pattern=".+"
+                data-val-required="请输入交易密码" id="Password" name="Password" placeholder="请输入交易密码" style="padding-right: 80px;"
+                type="password">
+            <!-- <a id="linkForgPwd" href="http://www.njczb.net/SCT/m/toLogin.html#">忘记密码</a> -->
+            <span class="field-validation-valid" data-valmsg-for="Password" data-valmsg-replace="true"></span>
+        </div>
+        <div class="tips mt30">使用你在聚鑫金服服务平台注册的手机号和交易密码进行登录</div>
+        <button id="loginBtn" type="button" class="btn btn-primary" style="background: red !important; border-color: red">登录</button>
+    </form>
+    <link rel="stylesheet" type="text/css" href="./css/weui.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/jquery-weui.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/ym.ypz.mobile.css">
+    <link rel="stylesheet" type="text/css" href="./css/ym.ypz.mobile.extension.css">
+    <link rel="stylesheet" type="text/css" href="./css/enter.css">
+    <script type="text/javascript" src="./js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.transit.js"></script>
+    <script type="text/javascript" src="./js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.validate.unobtrusive.min.js"></script>
+    <script type="text/javascript" src="./js/jweixin-1.2.0.js"></script>
+    <script type="text/javascript" src="./js/jquery-weui.min.js"></script>
+    <script type="text/javascript" src="./js/crypto-js.js"></script>
+    <script type="text/javascript" src="./js/ym.ypz.jquery.validate.unobtrusive.js"></script>
+    <script type="text/javascript" src="./js/ym.ypz.enum.mapping.js"></script>
+    <script type="text/javascript" src="./js/ym.ypz.form.js"></script>
+    <script type="text/javascript" src="./js/ym.ypz.mobile.js"></script>
+    <script type="text/javascript" src="./js/md5.js"></script>
+    <script type="text/javascript" src="./js/login.js"></script>
+    <script type="text/javascript">
+        var Environment = 'PRO';
+        var WechatParameters = 'd3hjMWY4YzMxMjljMDg4YTNhfHx8';
+    </script>
+
+</body>
+
+</html>

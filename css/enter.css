@@ -1,0 +1,110 @@
+body {
+	background-color: #fff
+}
+
+.logo {
+	text-align: center;
+	padding: 30px 0
+}
+
+.logo img {
+	width: 50px
+}
+
+.logo h2 {
+	font-size: 20px !important;
+	margin-top: 10px;
+	color: #666
+}
+
+.logo div {
+	font-size: 14px;
+	margin-top: 10px;
+	color: #aaa
+}
+
+form {
+	display: block;
+	padding: 30px
+}
+
+.row {
+	margin-bottom: 20px;
+	position: relative
+}
+
+.row:after {
+	content: '';
+	clear: both
+}
+
+.row .form-control {
+	font-size: 14px;
+	padding-top: 11px !important;
+	padding-bottom: 11px !important
+}
+
+.row a {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	font-size: 14px
+}
+
+.row .calculate-code {
+	position: absolute;
+	top: 3px;
+	right: 3px;
+	height: 37px;
+	border: 0;
+	background: 0
+}
+
+.btn {
+	padding-top: 10px !important;
+	padding-bottom: 10px !important
+}
+
+.checkbox, .checkbox span {
+	color: #9a9a9a;
+	font-size: 12px
+}
+
+.tips {
+	color: #9a9a9a;
+	font-size: 12px;
+	margin-bottom: 10px
+}
+
+.footer {
+	padding-bottom: 20px
+}
+
+.footer, .footer * {
+	text-align: center;
+	color: #ccc;
+	font-size: 12px
+}
+
+.footer .record a {
+	color: #ccc !important
+}
+
+.weui-popup__container .weui-popup__modal {
+	overflow-y: hidden;
+	background: #fff
+}
+
+.weui-popup__container .weui-popup__modal iframe {
+	width: 100%;
+	border: 0
+}
+
+.weui-popup__container .weui-footer.weui-footer_fixed-bottom {
+	z-index: 100;
+	border-top: 1px solid #d9d9d9;
+	color: #000;
+	background-color: #f3f3f3;
+	padding: 10px;
+	bottom: 0
+}

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html class="pixel-ratio-1 pixel-ratio-2 retina android android-6 android-6-0">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="theme-color" content="#1f212f">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="cache-control" content="max-age=864000">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="author" content="">
+    <meta name="description" content="">
+    <meta itemprop="name" content="">
+    <meta itemprop="description" content="">
+    <title>钱借到 - 电子借条平台</title>
+    <style>
+        button#btnSubmit {
+            width: 100px;
+        }
+        
+        .error_ipt {
+            border: 1px solid red!important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="weui-tab">
+        <input id="UserId" type="hidden" value="13203">
+        <div class="tab-header">
+            <div class="weui-flex">
+                <div>
+                    <img src="../imgs/head.jpg" class="header-img">
+                </div>
+                <div class="weui-flex__item user-info">
+                    <div class="name">系统管理员</div>
+                    <div class="balance">
+                        <!-- 余额：<span id="Balance"></span> -->
+                        <!-- 有效期：<span id="amountValidPeriod"></span> -->
+                        <span id="spanBalanceTips" class="fa fa-star"></span>
+                    </div>
+                </div>
+                <div>
+                    <!-- <a id="linkSetting" class="header-icon mr15" href="custInfo.html">
+                        <span class="fa fa-cog"></span>
+                    </a> -->
+                    <a id="linkReloadData" class="header-icon" href="index.html">
+                        <span class="fa fa-refresh"></span>
+                    </a>
+                </div>
+            </div>
+            <div id="divFinance" class="weui-flex finance-info">
+                <div class="weui-flex__item" onclick="toWait('0')">
+                    <div class="money"><span id="TotalReceivable">&nbsp;</span></div>
+                    <div class="des">&nbsp;</div>
+                </div>
+                <div class="weui-flex__item" onclick="toWait('1')">
+                    <div class="money"><span id="TotalNotRepayable">&nbsp;</span></div>
+                    <div class="des">&nbsp;</div>
+                </div>
+            </div>
+        </div>
+        <div class="weui-navbar">
+            <a id="tab1" class="tab weui-navbar__item  weui-bar__item--on">凭证管理</a>
+            <a id="tab2" class="tab weui-navbar__item weui-bar__item on">充值管理</a>
+            <a id="tab3" class="tab weui-navbar__item weui-bar__item on">通道管理</a>
+        </div>
+        <div class="weui-tab__bd">
+            <div id="divEffecting" class="weui-tab__bd-item weui-tab__bd-item--active">
+                <div class="no-data"><img src="../imgs/data-none.png">
+                    <div>暂无信息</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <link rel="stylesheet" type="text/css" href="../css/weui.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/jquery-weui.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/ym.ypz.mobile.css">
+    <link rel="stylesheet" type="text/css" href="../css/ym.ypz.mobile.extension.css">
+    <link rel="stylesheet" type="text/css" href="../css/renderIOU.css">
+    <link rel="stylesheet" href="../css/layer.css">
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.transit.js"></script>
+    <script type="text/javascript" src="../js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.validate.unobtrusive.min.js"></script>
+    <script type="text/javascript" src="../js/jweixin-1.2.0.js"></script>
+    <script type="text/javascript" src="../js/jquery-weui.min.js"></script>
+    <script type="text/javascript" src="../js/crypto-js.js"></script>
+    <script type="text/javascript" src="../js/ym.ypz.jquery.validate.unobtrusive.js"></script>
+    <script type="text/javascript" src="../js/ym.ypz.enum.mapping.js"></script>
+    <script type="text/javascript" src="../js/ym.ypz.form.js"></script>
+    <script type="text/javascript" src="../js/ym.ypz.mobile.js"></script>
+    <script type="text/javascript" src="../js/md5.js"></script>
+    <script type="text/javascript" src="../js/renderIOU.js"></script>
+    <script type="text/javascript" src="../js/layer.js"></script>
+    <script type="text/javascript">
+        $(function() {
+
+
+
+
+            function getTab1Data() {
+                let divEffecting = $("#divEffecting");
+                $.ajax({
+                    url: "http://39.106.11.92:8080/lgFace/proof/getAllProof",
+                    data: {
+                        // sfqr: 2
+                    },
+                    type: "POST",
+                    dataType: 'jsonp',
+                    success: function(res) {
+                        divEffecting.empty().append('');
+                        if (res.code == 99) {
+                            location.href = 'login.html';
+                        }
+                        if (res.proofList && res.proofList.length) {
+                            res.proofList.map(function(els) {
+                                els.img = "../imgs/user.png";
+                            })
+                            renderIOU('', divEffecting, res.proofList)
+                        }
+                        if (divEffecting.children().length > 0) {
+                            // divEffecting.append('<a href="myCredent.html?status=' + status + '" class="view-more">查看更多</a>')
+                        } else {
+                            divEffecting.append('<div class="no-data"><img src="../imgs/data-none.png" /><div>暂无凭证</div></div>')
+                        }
+                    }
+                });
+            }
+
+            function getTab2Data() {
+                let divEffecting = $("#divEffecting");
+                $.ajax({
+                    url: "http://39.106.11.92:8080/lgFace/user/getManager",
+                    data: {
+                        // userId: userInfo.id,
+                        // token: userInfo.token
+                    },
+                    type: "POST",
+                    dataType: 'jsonp',
+                    success: function(res) {
+                        divEffecting.empty().append('');
+                        if (res.code == 99) {
+                            location.href = 'login.html';
+                        }
+                        if (res.user && res.user.length) {
+                            res.user.forEach(els => {
+                                let czzt = ' <span class="text-success" style="font-size: 14px;color:#999!important;">未充值</span>';
+                                let confirm_btn = '';
+                                if (els.sfcz == 2) {
+                                    czzt = '<span class="text-success" style="font-size: 14px;">已确认充值</span>';
+                                } else if (els.sfcz == 1 && els.reAlipayId) {
+                                    czzt = '<span class="text-success" style="font-size: 14px;color:red!important;">已充值，待确认</span>';
+                                    confirm_btn = '<button id="btnSubmit" type="button" data-userid="' + els.id + '" class="btn btn-primary confirm_btn">确认充值</button>';
+                                }
+                                divEffecting.append('<a href="#" javascript:void(0) class="card-container">' +
+                                    '<div class="weui-flex border-bottom">' +
+                                    '  <div><img src="../imgs/user.png" class="head-img"></div>' +
+                                    '  <div class="ml10 text-center">' +
+                                    '    <div class="text-dark" style="line-height: 25px;">' +
+                                    (els.userName) +
+                                    '    </div>' +
+                                    '    <div class="text-xs" style="line-height: 15px;">(' + els.userPhone + ')</div>' +
+                                    '  </div>' +
+                                    '  <div class="weui-flex__item text-right">' +
+                                    '    <div style="line-height: 14px;">' +
+                                    (czzt) +
+                                    '      <small class="ml5" style="font-size: 12px;"></small>' +
+                                    '    </div>' +
+                                    '    <div style="line-height: 25px;">' +
+                                    '       <strong class="text-dark text-xl"></strong>' +
+                                    '    </div>' +
+                                    '  </div>' +
+                                    '</div>' +
+                                    '<div class="weui-flex border-bottom" style="line-height: 22px;">' +
+                                    '  <div class="">' +
+                                    '     <div class="text-xs">充值记录的支付宝账号：' + (els.reAlipayId || '') + '</div>' +
+                                    '     <div class="text-xs"></div>' +
+                                    '  </div>' +
+                                    '  <div class="weui-flex__item" style="text-align: right;">' +
+                                    '     <div class="text-xs"></div>' +
+                                    '     <div class="text-xs"></div>' +
+                                    '  </div>' +
+                                    '</div>' +
+                                    '<div class="text-right">' +
+                                    confirm_btn +
+                                    '</div></a>');
+
+                            });
+                            $('.confirm_btn').on({
+                                click: function() {
+                                    var _this = $(this);
+                                    $.ajax({
+                                        url: "http://39.106.11.92:8080/lgFace/user/updateUserPay",
+                                        data: {
+                                            id: $(_this).attr("data-userid"),
+                                            sfcz: 2
+                                        },
+                                        type: "POST",
+                                        dataType: 'jsonp',
+                                        success: function(res) {
+                                            getTab2Data();
+                                        }
+                                    })
+
+                                }
+                            });
+                        }
+                        if (divEffecting.children().length > 0) {
+                            // divEffecting.append('<a href="myCredent.html?status=' + status + '" class="view-more">查看更多</a>')
+                        } else {
+                            divEffecting.append('<div class="no-data"><img src="../imgs/data-none.png" /><div>暂无信息</div></div>')
+                        }
+                    }
+                });
+            }
+
+            function getTab3Data() {
+                let divEffecting = $("#divEffecting");
+                $.ajax({
+                    url: "http://39.106.11.92:8080/lgFace/comn/getSales",
+                    data: {},
+                    type: "POST",
+                    dataType: 'jsonp',
+                    success: function(res) {
+                        divEffecting.empty().append('');
+                        if (res.code == 99) {
+                            location.href = 'login.html';
+                        }
+                        if (res.salesList && res.salesList.length) {
+                            res.salesList.forEach(els => {
+
+                                divEffecting.append('<a href="#" javascript:void(0) class="card-container">' +
+                                    '<div class="weui-flex border-bottom">' +
+                                    '  <div><img src="../imgs/user.png" class="head-img"></div>' +
+                                    '  <div class="ml10 text-center">' +
+                                    '    <div class="text-dark" style="line-height: 25px;">' +
+                                    (els.salesName) +
+                                    '    </div>' +
+                                    '    <div class="text-xs" style="line-height: 15px;">(' + els.salesPhone + ')</div>' +
+                                    '  </div>' +
+                                    '  <div class="weui-flex__item text-right">' +
+                                    '    <div style="line-height: 14px;">' +
+                                    ('') +
+                                    '      <small class="ml5" style="font-size: 12px;"></small>' +
+                                    '    </div>' +
+                                    '    <div style="line-height: 25px;">' +
+                                    '       <strong class="text-dark text-xl"></strong>' +
+                                    '    </div>' +
+                                    '  </div>' +
+                                    '</div>'
+                                    // + '<div class="weui-flex border-bottom" style="line-height: 22px;">'
+                                    // + '  <div class="weui-flex__item">'
+                                    // // + '     <div class="text-xs">充值记录的支付宝账号：' + (els.reAlipayId || '') + '</div>'
+                                    // + '     <div class="text-xs"></div>'
+                                    // + '  </div>'
+                                    // + '  <div class="weui-flex__item" style="text-align: right;">'
+                                    // + '     <div class="text-xs"></div>'
+                                    // + '     <div class="text-xs"></div>'
+                                    // + '  </div>'
+                                    // + '</div>'
+                                    +
+                                    '<div class="text-right">'
+                                    // + '<button id="btnSubmit" type="button" data-userid="' + els.id + '" class="btn btn-primary confirm_btn">编辑</button>'
+                                    +
+                                    '</div></a>');
+
+                            });
+                            divEffecting.append('<a href="javascript:void(0)"  class="view-more"><button id="btnAddUser" type="button" style="width:80%;"  class="btn btn-primary confirm_btn">新增</button></a>')
+
+                            $('#btnAddUser').on({
+                                click: function() {
+                                    var _this = $(this);
+                                    layer.open({
+                                        type: 1,
+                                        title: '通道管理',
+                                        area: ['300px', '340px'], //宽高
+                                        btn: '提交', //可以无限个按钮
+                                        content: '<div class="row" style="margin-top:20px;    text-align: center;"><input class="form-control" id="salesName" name="salesName" placeholder="请输入通道名称" type="text" style="width:90%;"></div>' +
+                                            '<div class="row" style="margin-top:20px;    text-align: center;"><input class="form-control" id="salesPhone" name="salesPhone" placeholder="请输入通道联系方式" type="text" style="width:90%;"></div>' +
+                                            '<div class="row" style="margin-top:20px;    text-align: center;"><input class="form-control" id="salesId" name="salesId" placeholder="请输入通道号" type="text" style="width:90%;"></div>' +
+                                            '<div class="row" style="margin-top:20px;    text-align: center;"><input class="form-control" id="pxh" name="pxh" placeholder="请输入排序号" type="text" style="width:90%;"></div>',
+                                        yes: function(index, layero) {
+                                            let salesName = $("#salesName"),
+                                                salesPhone = $("#salesPhone"),
+                                                salesId = $("#salesId"),
+                                                pxh = $("#pxh"),
+                                                userInfo = sessionStorage.getItem('userInfo');
+                                            userInfo = JSON.parse(userInfo);
+                                            if (!userInfo) {
+                                                location.href = 'login.html';
+                                            }
+
+                                            if (!salesName.val()) {
+                                                salesName.addClass('error_ipt');
+                                                return false;
+                                            } else {
+                                                salesName.removeClass('error_ipt');
+                                            }
+                                            if (!salesPhone.val()) {
+                                                salesPhone.addClass('error_ipt');
+                                                return false;
+                                            } else {
+                                                salesPhone.removeClass('error_ipt');
+                                            }
+
+                                            layer.close(index);
+
+                                            $.ajax({
+                                                url: "http://39.106.11.92:8080/lgFace/proof/addSales",
+                                                data: {
+                                                    salesName: salesName.val(),
+                                                    salesPhone: salesPhone.val(),
+                                                    salesId: salesId.val(),
+                                                    pxh: pxh.val(),
+                                                    userId: userInfo.id,
+                                                    token: userInfo.token
+                                                },
+                                                type: "POST",
+                                                dataType: 'jsonp',
+                                                success: function(data) {
+                                                    debugger
+                                                    if (data.code == 99) {
+                                                        location.href = 'login.html';
+                                                    }
+                                                    if (data.code == '100') {
+                                                        $.toast("操作成功", "text");
+                                                        location.href = "index.html";
+                                                    } else {
+                                                        alert('操作失败！');
+                                                    }
+                                                }
+                                            });
+
+
+
+                                        }
+                                    });
+
+                                }
+                            });
+                        }
+                        if (divEffecting.children().length > 0) {
+                            // divEffecting.append('<a href="myCredent.html?status=' + status + '" class="view-more">查看更多</a>')
+                        } else {
+                            divEffecting.append('<div class="no-data"><img src="../imgs/data-none.png" /><div>暂无信息</div></div>')
+                        }
+                    }
+                });
+            }
+
+
+            getTab1Data();
+            $('.tab').on({
+                click: function() {
+                    var _this = $(this);
+                    _this.siblings().attr("class", "weui-navbar__item");
+                    _this.attr("class", "weui-navbar__item weui-bar__item--on");
+                    if (_this.attr("id") == 'tab1') {
+                        getTab1Data();
+                    } else if (_this.attr("id") == 'tab2') {
+                        getTab2Data();
+                    } else if (_this.attr("id") == 'tab3') {
+                        getTab3Data();
+                    }
+
+                }
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>

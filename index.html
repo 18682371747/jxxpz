@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html class="pixel-ratio-1 pixel-ratio-2 retina android android-6 android-6-0">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="theme-color" content="#1f212f">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="cache-control" content="max-age=864000">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="author" content="">
+    <meta name="description" content="">
+    <meta itemprop="name" content="">
+    <meta itemprop="description" content="">
+    <title>信凭证</title>
+</head>
+
+<body>
+    <div class="weui-tab">
+        <input id="UserId" type="hidden" value="13203">
+        <div class="tab-header">
+            <div class="weui-flex">
+                <div>
+                    <img src="./imgs/head.jpg" class="header-img">
+                </div>
+                <div class="weui-flex__item user-info">
+                    <div class="name"></div>
+                    <div class="balance">
+                        余额：<span id="Balance"></span> 有效期：
+                        <span id="amountValidPeriod"></span>
+                        <span id="spanBalanceTips" class="fa fa-star"></span>
+                    </div>
+                </div>
+                <div style="    position: absolute;right: 10px;">
+                    <a id="manager" class="header-icon mr15" href="./m/index.html">
+                        <span class="fa fa-user"></span>
+                    </a>
+                    <a id="linkSetting" class="header-icon mr15" href="custInfo.html">
+                        <span class="fa fa-cog"></span>
+                    </a>
+                    <a id="linkReloadData" class="header-icon" href="index.html">
+                        <span class="fa fa-refresh"></span>
+                    </a>
+                </div>
+            </div>
+            <div id="divFinance" class="weui-flex finance-info">
+                <div class="weui-flex__item" onclick="toWait('0')">
+                    <div class="money"><span id="TotalReceivable">0.00</span></div>
+                    <div class="des">待收总额(元)</div>
+                </div>
+                <div class="weui-flex__item" onclick="toWait('1')">
+                    <div class="money"><span id="TotalNotRepayable">0.00</span></div>
+                    <div class="des">待还总额(元)</div>
+                </div>
+            </div>
+        </div>
+        <div class="weui-navbar">
+            <a id="pending" class="weui-navbar__item  weui-bar__item--on">待确认</a>
+            <a id="effecting" class="weui-navbar__item weui-bar__item on">已生效</a>
+        </div>
+        <div class="weui-tab__bd">
+            <div id="divEffecting" class="weui-tab__bd-item weui-tab__bd-item--active">
+                <div class="no-data"><img src="./imgs/data-none.png">
+                    <div>暂无凭证</div>
+                </div>
+            </div>
+        </div>
+        <div class="weui-tabbar">
+            <a href="javascript:void(0);" class="weui-tabbar__item" id="dapingzheng">
+                <img src="./imgs/dpz.png" class="weui-tabbar__icon">
+                <p class="weui-tabbar__label">打凭证</p>
+            </a>
+            <a href="javascript:void(0);" class="weui-tabbar__item" id="wodepingzheng">
+                <img src="./imgs/wdpz.png" class="weui-tabbar__icon">
+                <p class="weui-tabbar__label">我的凭证</p>
+            </a>
+        </div>
+    </div>
+
+    <link rel="stylesheet" type="text/css" href="./css/weui.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/jquery-weui.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/ym.ypz.mobile.css">
+    <link rel="stylesheet" type="text/css" href="./css/ym.ypz.mobile.extension.css">
+    <link rel="stylesheet" type="text/css" href="./css/renderIOU.css">
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
+    <script type="text/javascript" src="./js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.transit.js"></script>
+    <script type="text/javascript" src="./js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.validate.unobtrusive.min.js"></script>
+    <script type="text/javascript" src="./js/jweixin-1.2.0.js"></script>
+    <script type="text/javascript" src="./js/jquery-weui.min.js"></script>
+    <script type="text/javascript" src="./js/crypto-js.js"></script>
+    <script type="text/javascript" src="./js/ym.ypz.jquery.validate.unobtrusive.js"></script>
+    <script type="text/javascript" src="./js/ym.ypz.enum.mapping.js"></script>
+    <script type="text/javascript" src="./js/ym.ypz.form.js"></script>
+    <script type="text/javascript" src="./js/ym.ypz.mobile.js"></script>
+    <script type="text/javascript" src="./js/md5.js"></script>
+    <script type="text/javascript" src="./js/renderIOU.js"></script>
+    <script type="text/javascript" src="./js/index.js"></script>
+    <script type="text/javascript">
+        function toWait(hIndex) {
+            window.location.href = "getDSDH.html?hIndex=" + hIndex;
+        }
+
+        //判断充值金额和有效期是否失效
+        function checkSum(amountValidPeriod) {
+
+            var d = new Date(Date.parse(amountValidPeriod.replace(/-/g, "/")));
+            var curDate = new Date();
+            if (d <= curDate) {
+                if (confirm("充值金额已过有效期，请重新充值！")) {
+                    window.location.href = "../m/toRecharge.html";
+                }
+            } else {
+                $.appAjax({
+                    url: "../m/getFinance.html",
+                    onSuccess: function(data) {
+                        if (data.totalMoney > 0) {
+                            window.location.href = "../m/toPlayCredent.html";
+                        } else {
+                            if (confirm("账户余额不足,请先充值！")) {
+                                window.location.href = "../m/toRecharge.html";
+                            }
+                        }
+                    }
+                });
+            }
+        }
+    </script>
+
+</body>
+
+</html>

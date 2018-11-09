@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html class="pixel-ratio-1 pixel-ratio-2 retina android android-6 android-6-0">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="theme-color" content="#1f212f">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="author" content="">
+    <meta name="description" content="">
+    <meta itemprop="name" content="">
+    <meta itemprop="description" content="">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache , must-revalidate">
+    <meta http-equiv="Expires" content="0">
+    <title>钱借到 - 电子借条平台</title>
+</head>
+
+<body>
+    <div class="logo">
+        <img src="./imgs/logo.png">
+        <h2>充值套餐</h2>
+    </div>
+    <form action="http://39.106.11.92:8080/lgFace/pay/reqPay" id="rechargeBtnForm" method="post" autocomplete="off">
+        <div class="row">
+            <!--<img src="./imgs/alipay.jpg" style="width: 100%; height: 100%;">-->
+            <input size="50" type="hidden" name="userId" id="userId" value="30B4589E856AE20FF4F5155C10489E0D" />
+            <div name="p3_Amt" id="p3_Amt" style="text-align: center; font-weight: bolder; color: red; font-size: 24px">
+                100.00
+            </div>
+            <input size="50" type="text" name="p2_Order" id="p2_Order" style="display:none;" />
+            <input type="hidden" name="pd_FrpId" value="alipaywap" class="btn btn-primary" />
+
+
+
+        </div>
+        <div class="row">
+            <!-- <input class="form-control" value=""> -->
+            <!--<input class="form-control text-right" data-val="true" data-val-required="支付宝ID" data-val-textlength="请勿超过128个字符"-->
+            <!--data-val-textlength-doublebytelength="2" data-val-textlength-maximumlength="128"-->
+            <!--data-val-textlength-minimumlength="0" placeholder="请输入您的支付宝账号" id="moneys" name="moneys" type="number"-->
+            <!--value="" aria-required="true" aria-000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000describedby="CreditorName-error" aria-invalid="true">-->
+        </div>
+        <div class="tips mt30">
+            <!--<font color="red">请扫码充值，充值成功后输入您充值成功的支付宝账号，平台审核充值结果后成为平台会员，本平台提供会员存证服务，服务期间不予退费！</font>
+        <font color="red">本平台提供会员存证服务，服务期间不予退费！</font>-->
+
+        </div>
+
+
+
+    </form>
+    <button id="rechargeBtn" type="button" onclick="openurl() " class="btn btn-primary">充值</button>
+
+    <script type="text/javascript">
+        var userPhone = localStorage.getItem('userPhone');
+
+        function openurl() {
+            window.location.href = "recharge2.html?userPhone=" + userPhone;
+        }
+    </script>
+
+
+    <link rel="stylesheet" type="text/css" href="./css/weui.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/jquery-weui.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/ym.ypz.mobile.css">
+    <link rel="stylesheet" type="text/css" href="./css/ym.ypz.mobile.extension.css">
+    <link rel="stylesheet" type="text/css" href="./css/enter.css">
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
+    <script type="text/javascript" src="./js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.transit.js"></script>
+    <script type="text/javascript" src="./js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.validate.unobtrusive.min.js"></script>
+    <script type="text/javascript" src="./js/jweixin-1.2.0.js"></script>
+    <script type="text/javascript" src="./js/jquery-weui.min.js"></script>
+    <script type="text/javascript" src="./js/crypto-js.js"></script>
+    <script type="text/javascript" src="./js/ym.ypz.jquery.validate.unobtrusive.js"></script>
+    <script type="text/javascript" src="./js/ym.ypz.enum.mapping.js"></script>
+    <script type="text/javascript" src="./js/ym.ypz.form.js"></script>
+    <script type="text/javascript" src="./js/ym.ypz.mobile.js"></script>
+    <script type="text/javascript" src="./js/md5.js"></script>
+    <script type="text/javascript" src="./js/ap.js"></script>
+
+    <script type="text/javascript">
+    </script>
+
+</body>
+
+</html>

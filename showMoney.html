@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html class="pixel-ratio-1 pixel-ratio-2 retina android android-6 android-6-0">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="theme-color" content="#1f212f">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="cache-control" content="max-age=864000">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="author" content="">
+    <meta name="description" content="">
+    <meta itemprop="name" content="">
+    <meta itemprop="description" content="">
+    <title>聚鑫金服</title>
+    <style>
+        html,
+        body {
+            height: 100%
+        }
+        
+        .weui-tab {
+            position: relative;
+            height: 100%;
+            padding-top: 100px;
+            background: #fff;
+        }
+        
+        .t_l_1 {
+            text-align: center;
+            height: 100px;
+            line-height: 100px;
+            color: #333;
+        }
+        
+        .t_l_2 {
+            font-size: 50px;
+            text-align: center;
+            font-weight: bold;
+            font-family: initial;
+            color: #108ee9;
+            letter-spacing: 2px;
+        }
+        
+        .t_l_3 {
+            text-align: center;
+            line-height: 100px;
+            height: 100px;
+            color: #999;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="weui-tab">
+        <div class="t_l_1">您可以借</div>
+        <div class="t_l_2">￥2500</div>
+        <div class="t_l_3">总额度3,000元</div>
+        <div class="weui-btn-area" style="padding-bottom:20px;">
+            <a class="weui-btn weui-btn_warn" href="javascript:void(0)" id="btnNext">去借钱</a>
+        </div>
+    </div>
+
+    <link rel="stylesheet" type="text/css" href="./css/weui.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/jquery-weui.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/ym.ypz.mobile.css">
+    <link rel="stylesheet" type="text/css" href="./css/ym.ypz.mobile.extension.css">
+    <script type="text/javascript" src="./js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="./js/jweixin-1.2.0.js"></script>
+    <script type="text/javascript" src="./js/jquery-weui.min.js"></script>
+    <script type="text/javascript" src="./js/crypto-js.js"></script>
+    <script type="text/javascript" src="./js/ym.ypz.mobile.js"></script>
+    <script type="text/javascript">
+        $("#btnNext").on({
+            click: function() {
+                window.location.href = "login.html";
+            }
+        });
+    </script>
+
+</body>
+
+</html>

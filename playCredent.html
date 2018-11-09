@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html class="pixel-ratio-1 pixel-ratio-2 retina android android-6 android-6-0">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="theme-color" content="#1f212f">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="cache-control" content="max-age=864000">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="author" content="">
+    <meta name="description" content="">
+    <meta itemprop="name" content="">
+    <meta itemprop="description" content="">
+    <title>打凭证</title>
+    <script type="text/javascript">
+        window.Error = function(message, url) {
+            alert('验证文件加载失败，请刷新页面重新加载',
+                function() {
+                    location.reload();
+                });
+        }
+    </script>
+    <link rel="stylesheet" href="./css/layer.css" id="layuicss-layer">
+    <style>
+        .weui-cell__hd.weui-label {
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="#" id="formNew" method="post" novalidate="novalidate">
+        <div class="container">
+            <img src="imgs/head.jpg" class="head-img">
+            <div class="weui-cells weui-cells_form">
+                <div class="weui-cell">
+                    <div class="weui-cell__hd weui-label">
+                        <label for="DebtorId">借款人</label></div>
+                    <div class="weui-cell__bd text-right">
+                        <input data-val="true" data-val-number="字段 借款人 必须是一个数字。" data-val-required="请输入借款人" id="DebtorId" name="DebtorId" type="hidden" value="13203" aria-required="true" aria-describedby="DebtorId-error" class="valid">
+                        <p id="jiekuanren"></p>
+                    </div>
+                </div>
+                <div class="weui-cell_border"></div>
+                <div class="weui-cell weui-cell_vcode weui-cell_warn">
+                    <div class="weui-cell__hd weui-label">
+                        <label for="CreditorId">
+                            <font color="#000000">出借人</font>
+                        </label>
+                    </div>
+                    <div class="weui-cell__bd">
+                        <input class="form-control text-right" data-val="true" data-val-required="出借人姓名" data-val-textlength="请勿超过128个字符" data-val-textlength-doublebytelength="2" data-val-textlength-maximumlength="128" data-val-textlength-minimumlength="0" id="CreditorName"
+                            name="CreditorName" placeholder="出借人姓名" type="text" value="" aria-required="true" aria-describedby="CreditorName-error" aria-invalid="true">
+                    </div>
+                    <div class="weui-cell__ft">
+                        <span class="weui-icon-warn"></span>
+                    </div>
+                </div>
+                <div class="weui-cell_border"></div>
+                <div class="weui-cell weui-cell_select">
+                    <div class="weui-cell__hd weui-label">
+                        <label for="BorrowingDate">借款日期</label></div>
+                    <div class="weui-cell__bd">
+                        <input class="form-control select text-right valid" data-cansame="false" data-clear="false" data-max="#RepaymentDate" data-min="" data-toggle="date" data-val="true" data-val-date="字段 借款日期 必须是日期。" data-val-required="借款日期" id="BorrowingDate" name="BorrowingDate"
+                            placeholder="借款日期" type="text" value="" readonly="" aria-required="true" aria-describedby="BorrowingDate-error">
+                    </div>
+                    <div class="weui-cell__ft">
+                        <span class="weui-icon-warn"></span>
+                    </div>
+                </div>
+                <div class="weui-cell weui-cell_select weui-cell_warn">
+                    <div class="weui-cell__hd weui-label">
+                        <label for="RepaymentDate">
+                            <font color="#000000">还款日期</font>
+                        </label></div>
+                    <div class="weui-cell__bd">
+                        <input class="form-control select text-right" data-cansame="false" data-clear="false" data-min="#BorrowingDate" data-toggle="date" data-val="true" data-val-date="字段 还款日期 必须是日期。" data-val-required="还款日期" id="RepaymentDate" name="RepaymentDate" placeholder="还款日期"
+                            type="text" value="" readonly="" aria-required="true" aria-describedby="RepaymentDate-error" aria-invalid="true">
+                    </div>
+                    <div class="weui-cell__ft">
+                        <span class="weui-icon-warn"></span>
+                    </div>
+                </div>
+                <div class="weui-cell_message">
+                    <span id="spanDays" class="default"></span>
+                </div>
+                <div class="weui-cell weui-cell_vcode weui-cell_warn">
+                    <div class="weui-cell__hd weui-label">
+                        <label for="Amount">
+                            <font color="#000000">借款金额</font>
+                        </label>
+                    </div>
+                    <div class="weui-cell__bd">
+                        <input class="form-control text-right" data-val="true" data-val-number="字段 借款金额 必须是一个数字。" data-val-range="请输入0.01~200000" data-val-range-max="200000" data-val-range-min="0.01" data-val-required="借款金额" id="Amount" name="Amount" onkeyup="this.value=this.value.replace(/[^\d\.]/ig,'');"
+                            placeholder="借款金额" type="number" value="" aria-required="true" aria-describedby="Amount-error"></div>
+                    <div class="weui-cell__ft">
+                        <span class="weui-icon-warn"></span>
+                    </div>
+                    <div class="weui-cell__ft">
+                        <span class="weui-vcode-icon text-currency">
+                            <font color="#000000">元</font>
+                        </span>
+                    </div>
+                </div>
+                <div class="weui-cell weui-cell_select weui-cell_warn">
+                    <div class="weui-cell__hd weui-label">
+                        <label for="AnnualInterestRate">
+                            <font color="#000000">年化利率</font>
+                        </label>
+                    </div>
+                    <div class="weui-cell__bd">
+
+                        <select class="form-control select text-right" data-clear="false" data-toggle="select" data-val="true" data-val-required="年化利率" id="AnnualInterestRate" name="AnnualInterestRate" aria-required="true" aria-describedby="AnnualInterestRate-error" style="display: none;">
+                            <option value="">年化利率</option>
+                            <option value="0">0%</option>
+                            <option value="1">1%</option>
+                            <option value="2">2%</option>
+                            <option value="3">3%</option>
+                            <option value="4">4%</option>
+                            <option value="5">5%</option>
+                            <option value="6">6%</option>
+                            <option value="7">7%</option>
+                            <option value="8">8%</option>
+                            <option value="9">9%</option>
+                            <option value="10">10%</option>
+                            <option value="11">11%</option>
+                            <option value="12">12%</option>
+                            <option value="13">13%</option>
+                            <option value="14">14%</option>
+                            <option value="15">15%</option>
+                            <option value="16">16%</option>
+                            <option value="17">17%</option>
+                            <option value="18">18%</option>
+                            <option value="19">19%</option>
+                            <option value="20">20%</option>
+                        </select>
+                    </div>
+                    <div class="weui-cell__ft">
+                        <span class="weui-icon-warn"></span>
+                    </div>
+                </div>
+                <div class="weui-cell_message">
+                    <span id="TotalAmount" class="default"></span>
+                    <input id="TotalAmountVal" name="TotalAmountVal" type="hidden" value="">
+                </div>
+                <div class="weui-cell_message">
+                    <span id="SpanInterest" class="default"></span>
+                </div>
+                <div class="weui-cell weui-cell_select weui-cell_warn">
+                    <div class="weui-cell__hd weui-label">
+                        <label for="LoanUse">
+                            <font color="#000000">用途</font>
+                        </label>
+                    </div>
+                    <div class="weui-cell__bd">
+                        <select class="form-control select text-right" data-clear="false" data-toggle="select" data-val="true" data-val-required="用途" id="LoanUse" name="LoanUse" style="display: none;" aria-required="true" aria-describedby="LoanUse-error">
+                            <option value="">用途</option>
+                            <option value="日常消费">日常消费</option>
+                            <option value="医疗">医疗</option>
+                            <option value="旅游">旅游</option>
+                            <option value="装修">装修</option>
+                            <option value="教育">教育</option>
+                        </select>
+                    </div>
+                    <div class="weui-cell__ft">
+                        <span class="weui-icon-warn"></span>
+                    </div>
+                </div>
+                <div class="weui-cell_border"></div>
+                <div class="weui-cell">
+                    <div class="weui-cell__hd weui-label">
+                        <label for="Remark">备注</label>
+                    </div>
+                    <div class="weui-cell__bd">
+                        <input class="form-control text-right valid" data-val="true" data-val-textlength="请勿超过128个字符" data-val-textlength-doublebytelength="2" data-val-textlength-maximumlength="128" data-val-textlength-minimumlength="0" id="Remark" name="Remark" placeholder="(选填)请输入备注"
+                            type="text" value="" aria-describedby="Remark-error">
+                    </div>
+                    <div class="weui-cell__ft">
+                        <span class="weui-icon-warn"></span>
+                    </div>
+                </div>
+                <div class="weui-cell weui-cell_vcode weui-cell_warn">
+                    <div class="weui-cell__hd weui-label">
+                        <label for="Amount">
+                                <font color="#000000">服务费</font>
+                            </label>
+                    </div>
+                    <div class="weui-cell__bd">
+                        <input class="form-control text-right" data-val="true" data-val-number="字段 服务费 必须是一个数字。" data-val-range="请输入0.01~200000" data-val-range-max="200000" data-val-range-min="0.01" id="ServiceCharge" name="ServiceCharge" onkeyup="this.value=this.value.replace(/[^\d\.]/ig,'');"
+                            placeholder="服务费" type="number" value="10" aria-required="true" aria-describedby="ServiceCharge-error">
+                    </div>
+
+                    <div class="weui-cell__ft">
+                        <span class="weui-vcode-icon text-currency">
+                                <font color="#000000">元</font>
+                            </span>
+                    </div>
+                </div>
+
+                <div class="weui-cell weui-cell_agreement">
+                    <div class="weui-cell__bd">
+                        <label class="checkbox-primary checkbox-inline">
+                            <input id="cbAgreement" type="checkbox" checked="checked">
+                            <span>已阅读并同意</span></label>
+                        <a href="interService.html">《居间服务协议》</a>
+                        <a href="toLoan.html">《借款协议》</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="weui-submit-area">
+            <button id="btnSubmit" type="button" class="btn btn-primary">创建凭证</button>
+        </div>
+    </form>
+    <link rel="stylesheet" type="text/css" href="./css/weui.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/jquery-weui.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/ym.ypz.mobile.css">
+    <link rel="stylesheet" type="text/css" href="./css/ym.ypz.mobile.extension.css">
+    <link rel="stylesheet" type="text/css" href="./css/new.css">
+    <script type="text/javascript" src="./js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.transit.js"></script>
+    <script type="text/javascript" src="./js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.validate.unobtrusive.min.js"></script>
+    <script type="text/javascript" src="./js/jweixin-1.2.0.js"></script>
+    <script type="text/javascript" src="./js/jquery-weui.min.js"></script>
+    <script type="text/javascript" src="./js/crypto-js.js"></script>
+    <script type="text/javascript" src="./js/ym.ypz.jquery.validate.unobtrusive.js"></script>
+    <script type="text/javascript" src="./js/ym.ypz.enum.mapping.js"></script>
+    <script type="text/javascript" src="./js/ym.ypz.form.js"></script>
+    <script type="text/javascript" src="./js/ym.ypz.mobile.js"></script>
+    <script type="text/javascript" src="./js/md5.js"></script>
+    <script type="text/javascript" src="./js/layer.js"></script>
+    <script type="text/javascript" src="./js/playCredent.js"></script>
+
+
+</body>
+
+</html>

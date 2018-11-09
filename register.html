@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html class="pixel-ratio-2 retina ios ios-11 ios-11-0 ios-gt-10 ios-gt-9 ios-gt-8 ios-gt-7 ios-gt-6">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="apple-touch-icon" sizes="180x180" href="">
+    <link rel="icon" type="image/png" href="" sizes="32x32">
+    <link rel="icon" type="image/png" href="" sizes="16x16">
+    <link rel="manifest" href="">
+    <link rel="mask-icon" href="" color="#1f212f">
+    <meta name="theme-color" content="#1f212f">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta http-equiv="cache-control" content="max-age=864000">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="author" content="">
+    <meta name="description" content="">
+    <meta itemprop="name" content="">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/Favicons/favicon-96x96.png">
+    <title>聚鑫金服</title>
+
+    <link rel="stylesheet" type="text/css" href="./css/weui.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/jquery-weui.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/ym.ypz.mobile.css">
+    <link rel="stylesheet" type="text/css" href="./css/ym.ypz.mobile.extension.css">
+
+    <link rel="stylesheet" type="text/css" href="./css/register.css">
+
+    <style type="text/css">
+        .require:before {
+            content: '*';
+            color: #d9534f;
+            font-weight: bold;
+            margin-right: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="hidden" id="hidFieldData" value="{&quot;Name&quot;:{&quot;IsRequired&quot;:true,&quot;Description&quot;:&quot;请输入姓名&quot;,&quot;Name&quot;:&quot;姓名&quot;},&quot;salesID&quot;:{&quot;IsRequired&quot;:true,&quot;Description&quot;:&quot;请选择业务员&quot;,&quot;Name&quot;:&quot;姓名&quot;},&quot;OperatorPassword&quot;:{&quot;IsRequired&quot;:true,&quot;Description&quot;:&quot;请输入运营商密码&quot;,&quot;Name&quot;:&quot;运营商密码&quot;},&quot;IdentityCode&quot;:{&quot;IsRequired&quot;:true,&quot;Description&quot;:&quot;请输入身份证号码&quot;,&quot;Name&quot;:&quot;身份证号码&quot;},&quot;FrontOfIDCard&quot;:{&quot;IsRequired&quot;:false,&quot;Description&quot;:&quot;请上传身份证正面照&quot;,&quot;Name&quot;:&quot;身份证正面照&quot;},&quot;BackOfIDCard&quot;:{&quot;IsRequired&quot;:false,&quot;Description&quot;:&quot;请上传身份证背面照&quot;,&quot;Name&quot;:&quot;身份证背面照&quot;},&quot;IDCardInHand&quot;:{&quot;IsRequired&quot;:false,&quot;Description&quot;:&quot;请上传手持身份证照&quot;,&quot;Name&quot;:&quot;手持身份证照&quot;},&quot;CellPhoneNumber&quot;:{&quot;IsRequired&quot;:true,&quot;Description&quot;:&quot;请输入手机号码&quot;,&quot;Name&quot;:&quot;手机号码&quot;},&quot;QQ&quot;:{&quot;IsRequired&quot;:false,&quot;ValueLimit&quot;:&quot;{\&quot;type\&quot;:\&quot;Regex\&quot;,\&quot;value\&quot;:\&quot;^([1-9]{1}[0-9]{4,10})?$\&quot;}&quot;,&quot;Description&quot;:&quot;请输入QQ号码&quot;,&quot;Name&quot;:&quot;QQ号码&quot;},&quot;Area&quot;:{&quot;IsRequired&quot;:false,&quot;Description&quot;:&quot;请选择所在地区&quot;,&quot;Name&quot;:&quot;所在地区&quot;},&quot;Address&quot;:{&quot;IsRequired&quot;:false,&quot;Description&quot;:&quot;请输入详细地址&quot;,&quot;Name&quot;:&quot;详细地址&quot;},&quot;FathersName&quot;:{&quot;IsRequired&quot;:false,&quot;Description&quot;:&quot;请输入父亲姓名&quot;,&quot;Name&quot;:&quot;姓名&quot;},&quot;FathersPhoneNumber&quot;:{&quot;IsRequired&quot;:false,&quot;Description&quot;:&quot;请输入父亲电话号码&quot;,&quot;Name&quot;:&quot;电话号码&quot;},&quot;MothersName&quot;:{&quot;IsRequired&quot;:false,&quot;Description&quot;:&quot;请输入母亲姓名&quot;,&quot;Name&quot;:&quot;姓名&quot;},&quot;MothersPhoneNumber&quot;:{&quot;IsRequired&quot;:false,&quot;Description&quot;:&quot;请输入母亲电话号码&quot;,&quot;Name&quot;:&quot;电话号码&quot;},&quot;SpousesName&quot;:{&quot;IsRequired&quot;:false,&quot;Description&quot;:&quot;请输入配偶姓名&quot;,&quot;Name&quot;:&quot;姓名&quot;},&quot;SpousesPhoneNumber&quot;:{&quot;IsRequired&quot;:false,&quot;Description&quot;:&quot;请输入配偶电话号码&quot;,&quot;Name&quot;:&quot;电话号码&quot;},&quot;CompanyName&quot;:{&quot;IsRequired&quot;:false,&quot;Description&quot;:&quot;请输入公司名称&quot;,&quot;Name&quot;:&quot;名称&quot;},&quot;CompanyAddress&quot;:{&quot;IsRequired&quot;:false,&quot;Description&quot;:&quot;请输入公司地址&quot;,&quot;Name&quot;:&quot;地址&quot;},&quot;CompanyPhoneNumber&quot;:{&quot;IsRequired&quot;:false,&quot;Description&quot;:&quot;请输入公司电话号码&quot;,&quot;Name&quot;:&quot;电话号码&quot;},&quot;PostName&quot;:{&quot;IsRequired&quot;:false,&quot;Description&quot;:&quot;请输入职务名称&quot;,&quot;Name&quot;:&quot;职务名称&quot;},&quot;MonthlyIncome&quot;:{&quot;IsRequired&quot;:false,&quot;Description&quot;:&quot;请输入月收入&quot;,&quot;Name&quot;:&quot;月收入(元)&quot;},&quot;WagePaymentMethod&quot;:{&quot;IsRequired&quot;:false,&quot;ValueLimit&quot;:&quot;{\&quot;type\&quot;:\&quot;Enum\&quot;,\&quot;value\&quot;:\&quot;WagePaymentMethod\&quot;}&quot;,&quot;Description&quot;:&quot;请选择工资发放方式&quot;,&quot;Name&quot;:&quot;工资发放方式&quot;},&quot;SocialSecuritySituation&quot;:{&quot;IsRequired&quot;:false,&quot;ValueLimit&quot;:&quot;{\&quot;type\&quot;:\&quot;Enum\&quot;,\&quot;value\&quot;:\&quot;SocialSecuritySituation\&quot;}&quot;,&quot;Description&quot;:&quot;请选择社保情况&quot;,&quot;Name&quot;:&quot;社保情况&quot;},&quot;JDBTotalLiabilities&quot;:{&quot;IsRequired&quot;:false,&quot;Description&quot;:&quot;请输入借贷宝总负债&quot;,&quot;Name&quot;:&quot;总负债(元)&quot;},&quot;JDBTotalRepayment&quot;:{&quot;IsRequired&quot;:false,&quot;Description&quot;:&quot;请输入借贷宝已还款&quot;,&quot;Name&quot;:&quot;已还款(元)&quot;},&quot;JJDTotalLiabilities&quot;:{&quot;IsRequired&quot;:false,&quot;Description&quot;:&quot;请输入今借到总负债&quot;,&quot;Name&quot;:&quot;总负债(元)&quot;},&quot;JJDTotalRepayment&quot;:{&quot;IsRequired&quot;:false,&quot;Description&quot;:&quot;请输入今借到已还款&quot;,&quot;Name&quot;:&quot;已还款(元)&quot;},&quot;RepaymentTodaySituation&quot;:{&quot;IsRequired&quot;:false,&quot;ValueLimit&quot;:&quot;{\&quot;type\&quot;:\&quot;Enum\&quot;,\&quot;value\&quot;:\&quot;RepaymentTodaySituation\&quot;}&quot;,&quot;Description&quot;:&quot;请选择今日还款情况&quot;,&quot;Name&quot;:&quot;今日还款情况&quot;},&quot;OverdueSituation&quot;:{&quot;IsRequired&quot;:false,&quot;ValueLimit&quot;:&quot;{\&quot;type\&quot;:\&quot;Enum\&quot;,\&quot;value\&quot;:\&quot;OverdueSituation\&quot;}&quot;,&quot;Description&quot;:&quot;请选择逾期情况&quot;,&quot;Name&quot;:&quot;逾期情况&quot;},&quot;ZMXYPoints&quot;:{&quot;IsRequired&quot;:false,&quot;Description&quot;:&quot;请输入芝麻信用分&quot;,&quot;Name&quot;:&quot;芝麻信用分&quot;},&quot;AlipayAccount&quot;:{&quot;IsRequired&quot;:false,&quot;Description&quot;:&quot;请输入支付宝账号&quot;,&quot;Name&quot;:&quot;支付宝账号&quot;},&quot;OperatorPassword&quot;:{&quot;IsRequired&quot;:false,&quot;Description&quot;:&quot;请输入运营商密码&quot;,&quot;Name&quot;:&quot;运营商密码&quot;},&quot;WeiXinNo&quot;:{&quot;IsRequired&quot;:false,&quot;Description&quot;:&quot;请输入微信号&quot;,&quot;Name&quot;:&quot;微信号&quot;},&quot;HuaBeiQuota&quot;:{&quot;IsRequired&quot;:false,&quot;Description&quot;:&quot;请输入花呗额度&quot;,&quot;Name&quot;:&quot;花呗额度&quot;},&quot;IP&quot;:{&quot;IsRequired&quot;:false,&quot;Description&quot;:&quot;请输入IP地址&quot;,&quot;Name&quot;:&quot;IP地址&quot;},&quot;PhoneModel&quot;:{&quot;IsRequired&quot;:false,&quot;Description&quot;:&quot;请输入手机型号&quot;,&quot;Name&quot;:&quot;手机型号&quot;},&quot;AddressBook&quot;:{&quot;IsRequired&quot;:false,&quot;Description&quot;:&quot;请输入通讯录&quot;,&quot;Name&quot;:&quot;通讯录&quot;},&quot;MarriageSituation&quot;:{&quot;IsRequired&quot;:false,&quot;ValueLimit&quot;:&quot;{\&quot;type\&quot;:\&quot;Enum\&quot;,\&quot;value\&quot;:\&quot;MarriageSituation\&quot;}&quot;,&quot;Description&quot;:&quot;请选择婚姻状况&quot;,&quot;Name&quot;:&quot;婚姻状况&quot;},&quot;EducationSituation&quot;:{&quot;IsRequired&quot;:false,&quot;ValueLimit&quot;:&quot;{\&quot;type\&quot;:\&quot;Enum\&quot;,\&quot;value\&quot;:\&quot;EducationSituation\&quot;}&quot;,&quot;Description&quot;:&quot;请选择学历情况&quot;,&quot;Name&quot;:&quot;学历情况&quot;},&quot;JieBeiQuota&quot;:{&quot;IsRequired&quot;:false,&quot;Description&quot;:&quot;请输入借呗额度&quot;,&quot;Name&quot;:&quot;借呗额度&quot;},&quot;ProvidentFundSituation&quot;:{&quot;IsRequired&quot;:false,&quot;ValueLimit&quot;:&quot;{\&quot;type\&quot;:\&quot;Enum\&quot;,\&quot;value\&quot;:\&quot;ProvidentFundSituation\&quot;}&quot;,&quot;Description&quot;:&quot;请选择公积金情况&quot;,&quot;Name&quot;:&quot;公积金情况&quot;},&quot;PropertySituation&quot;:{&quot;IsRequired&quot;:false,&quot;ValueLimit&quot;:&quot;{\&quot;type\&quot;:\&quot;Enum\&quot;,\&quot;value\&quot;:\&quot;PropertySituation\&quot;}&quot;,&quot;Description&quot;:&quot;请选择房产情况&quot;,&quot;Name&quot;:&quot;房产情况&quot;},&quot;VehicleSituation&quot;:{&quot;IsRequired&quot;:false,&quot;ValueLimit&quot;:&quot;{\&quot;type\&quot;:\&quot;Enum\&quot;,\&quot;value\&quot;:\&quot;VehicleSituation\&quot;}&quot;,&quot;Description&quot;:&quot;请选择车辆情况&quot;,&quot;Name&quot;:&quot;车辆情况&quot;},&quot;ColleagueName&quot;:{&quot;IsRequired&quot;:false,&quot;Description&quot;:&quot;请输入同事姓名&quot;,&quot;Name&quot;:&quot;姓名&quot;},&quot;ColleaguePhoneNumber&quot;:{&quot;IsRequired&quot;:false,&quot;Description&quot;:&quot;请输入同事电话号码&quot;,&quot;Name&quot;:&quot;电话号码&quot;},&quot;ZhiMaCreditantifraudverify&quot;:{&quot;IsRequired&quot;:false,&quot;Description&quot;:&quot;请输入芝麻欺诈信息验证&quot;,&quot;Name&quot;:&quot;芝麻欺诈信息验证&quot;},&quot;FrontOfIDCardCheckInfo&quot;:{&quot;IsRequired&quot;:false,&quot;Description&quot;:&quot;请输入身份证正面照校验信息&quot;,&quot;Name&quot;:&quot;身份证正面照校验信息&quot;},&quot;PositionInfoJson&quot;:{&quot;IsRequired&quot;:false,&quot;Description&quot;:&quot;请输入地址信息&quot;,&quot;Name&quot;:&quot;地址信息&quot;}}">
+    <div class="img-content">
+
+        <img style="width:100%;height:9.5rem;" src="./imgs/top.png">
+    </div>
+    <div class="m-navbar">
+        <div class="stick">
+            <span class="bar"></span>
+        </div>
+        <ul>
+            <li id="step1" class="status-curr"><span>个人信息</span></li>
+            <li id="step2" class=""><span>补充信息</span></li>
+            <li id="step3" class=""><span>认证</span></li>
+        </ul>
+    </div>
+    <form id="frm1" class="form-action" novalidate="novalidate">
+        <input data-val="true" data-val-number="字段 纬度 必须是一个数字。" id="Latitude" name="Latitude" type="hidden" value="">
+        <input data-val="true" data-val-number="字段 经度 必须是一个数字。" id="Longitude" name="Longitude" type="hidden" value="">
+        <input id="Par" name="Par" type="hidden" value="15C19B28F247FED70D12F4B3C096779B">
+        <div class="weui-cells__title" id="information">本人信息<span style="color:#d9534f;">（*为必填）</span></div>
+        <div class="weui-cells weui-cells_form" data-id="information">
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <label class="weui-label require" for="Name">姓名</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" id="Name" name="Name" type="text" value="" placeholder="请输入姓名" data-val="true" data-val-required="请输入姓名"> </div>
+                <div class="weui-cell__ft">
+                    <i class="weui-icon-warn"></i>
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <label class="weui-label require" for="CellPhoneNumber">手机号码</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" id="CellPhoneNumber" name="CellPhoneNumber" type="number" value="" placeholder="请输入手机号码" data-val="true" data-val-required="请输入手机号码">
+                </div>
+                <div class="weui-cell__ft">
+                    <i class="weui-icon-warn"></i>
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <label class="weui-label require" for="IdentityCode">身份证号码</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" data-val="true" data-val-identitycode="身份证号码 格式错误" id="IdentityCode" name="IdentityCode" type="text" value="" placeholder="请输入身份证号码" data-val-required="请输入身份证号码"> </div>
+                <div class="weui-cell__ft">
+                    <i class="weui-icon-warn"></i>
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <label class="weui-label require" for="IdentityCode">登陆密码</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" data-val="true" id="password" name="password" type="text" value="" data-val-password="请输入6位数字的交易密码" data-val-password-pattern="^(\d{6})?$" placeholder="请输入6位数字的交易密码" data-val-required="请输入6位数字的交易密码"> </div>
+                <div class="weui-cell__ft">
+                    <i class="weui-icon-warn"></i>
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <label class="weui-label require" for="salesID">工号</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <select class="form-control" data-val-required="请选择工员" id="salesID" name="salesID">
+                                            <option value="">--请选择工员--</option>
+                                        </select>
+                </div>
+                <div class="weui-cell__ft">
+                    <i class="weui-icon-warn"></i>
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <label class="weui-label" for="WeiXinNo">微信号</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" id="WeiXinNo" name="WeiXinNo" type="text" value="" placeholder="请输入微信号">
+                </div>
+                <div class="weui-cell__ft">
+                    <i class="weui-icon-warn"></i>
+                </div>
+            </div>
+            <div class="weui-cell weui-cell_select weui-cell_select-after">
+                <div class="weui-cell__hd text-left">
+                    <input data-val="true" id="ProvinceId" name="ProvinceId" type="hidden" value="">
+                    <input data-val="true" id="CityId" name="CityId" type="hidden" value="">
+                    <input data-val="true" id="DistrictId" name="DistrictId" type="hidden" value="">
+                    <label class="weui-label" for="Area">所在地区</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <input class="weui-select" id="Area" name="Area" type="text" value="" placeholder="请选择所在地区" readonly="">
+                </div>
+                <div class="weui-cell__ft">
+                    <i class="weui-icon-warn"></i>
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <label class="weui-label" for="Address">详细地址</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" id="Address" name="Address" type="text" value="" placeholder="请输入详细地址">
+                </div>
+                <div class="weui-cell__ft">
+                    <i class="weui-icon-warn"></i>
+                </div>
+            </div>
+        </div>
+    </form>
+    <form id="frm2" novalidate="novalidate">
+
+        <div class="weui-cells__title" id="companyInfo">公司信息</div>
+        <div class="weui-cells weui-cells_form" data-id="companyInfo">
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <label class="weui-label" for="CompanyName">名称</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" id="CompanyName" name="CompanyName" type="text" value="" placeholder="请输入公司名称">
+                </div>
+                <div class="weui-cell__ft">
+                    <i class="weui-icon-warn"></i>
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <label class="weui-label" for="CompanyAddress">地址</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" id="CompanyAddress" name="CompanyAddress" type="text" value="" placeholder="请输入公司地址">
+                </div>
+                <div class="weui-cell__ft">
+                    <i class="weui-icon-warn"></i>
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <label class="weui-label" for="CompanyPhoneNumber">电话号码</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" id="CompanyPhoneNumber" name="CompanyPhoneNumber" type="text" value="" placeholder="请输入公司电话号码">
+                </div>
+                <div class="weui-cell__ft">
+                    <i class="weui-icon-warn"></i>
+                </div>
+            </div>
+        </div>
+        <div class="weui-cells__title" id="salaryInfo">薪酬信息</div>
+        <div class="weui-cells weui-cells_form" data-id="salaryInfo">
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <label class="weui-label" for="MonthlyIncome">月收入(元)</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" data-val="true" data-val-number="字段 月收入(元) 必须是一个数字。" data-val-range="请输入 0~1.79769313486232E+308" data-val-range-max="1.79769313486232E+308" data-val-range-min="0" id="MonthlyIncome" name="MonthlyIncome" type="number" value=""
+                        placeholder="请输入月收入">
+                </div>
+                <div class="weui-cell__ft">
+                    <i class="weui-icon-warn"></i>
+                </div>
+            </div>
+        </div>
+    </form>
+    <form id="frm3" novalidate="novalidate">
+        <div id="divCertification" class="auditing">
+            <div class="weui-cell__hd">运营商认证</div>
+            <div class="weui-cells  weui-cells_form">
+                <div class="weui-cell">
+                    <div class="weui-cell__hd">
+                        <label class="weui-label require" for="OperatorPassword">运营商密码</label>
+                    </div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" id="OperatorPassword" name="OperatorPassword" type="text" value="" placeholder="请输入运营商密码" data-val="true" data-val-required="请输入运营商密码">
+                    </div>
+                    <div class="weui-cell__ft">
+                        <i class="weui-icon-warn"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="weui-btn-area" style="padding-bottom:20px;">
+        <a class="weui-btn weui-btn_warn" href="javascript:void(0)" id="btnNext">下一步</a>
+    </div>
+    <div id="background" class="background" style="display: none; "></div>
+    <div id="progressBar" class="progressBar" style="display: none; ">请稍等,正在为您计算额度...</div>
+
+    <script type="text/javascript" src="./js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.transit.js"></script>
+    <script type="text/javascript" src="./js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.validate.unobtrusive.min.js"></script>
+    <script type="text/javascript" src="./js/jweixin-1.2.0.js"></script>
+    <script type="text/javascript" src="./js/jquery-weui.min.js"></script>
+    <script type="text/javascript" src="./js/swiper.js"></script>
+    <script type="text/javascript" src="./js/crypto-js.js"></script>
+
+    <script type="text/javascript" src="./js/fastclick.js"></script>
+    <script type="text/javascript" src="./js/crypto-js.js"></script>
+    <script type="text/javascript" src="./js/yc.sby.city.picker.js"></script>
+    <script type="text/javascript" src="./js/yc.sby.enum.mapping.js"></script>
+    <script type="text/javascript" src="./js/yc.sby.form.js"></script>
+    <script type="text/javascript" src="./js/yc.sby.mobile.js"></script>
+
+
+
+    <script type="text/javascript" src="./js/canvas-to-blob.js"></script>
+    <script type="text/javascript" src="./js/register1.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html class="pixel-ratio-1 pixel-ratio-2 retina android android-6 android-6-0">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="theme-color" content="#1f212f">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="cache-control" content="max-age=864000">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="author" content="">
+    <meta name="description" content="">
+    <meta itemprop="name" content="">
+    <meta itemprop="description" content="">
+    <title>凭证详情</title>
+    <script type="text/javascript">
+        window.Error = function(message, url) {
+            alert('验证文件加载失败，请刷新页面重新加载',
+                function() {
+                    location.reload();
+                });
+        }
+    </script>
+    <link rel="stylesheet" href="./css/layer.css" id="layuicss-layer">
+</head>
+
+<body class="">
+    <div id="divQRCode" class="tips-container hide" style="display: none;">
+        <div style="text-align:center;">
+            <img src="./imgs/detailcode2.jpg" style="height:300px;width:300px;">
+        </div>
+        <div class="qrcode-text">
+            <p>让出借人扫扫这个二维码</p>
+        </div>
+        <button id="btnQRCodeClose" type="button" class="btn-qrcode-close">
+            <span class="fa fa-check mr5"></span>知道啦
+        </button>
+    </div>
+    <div id="divShare" class="tips-container hide">
+        <div style="text-align:center;">
+            <img src="./imgs/jt.png" style="position:relative;top:0px;left:130px;height:100px;width:100px;">
+        </div>
+        <div class="qrcode-text">
+            <p>点击右上角分享给对方</p>
+        </div>
+        <button id="btnShareClose" type="button" class="btn-qrcode-close">
+            <span class="fa fa-check mr5"></span>知道啦
+        </button>
+    </div>
+    <div id="divMobilePay" class="tips-container hide">
+        <img src="./imgs/jt.png" class="mobilepay-arrow">
+        <div class="mobilepay-text">
+            <p>请选择</p>
+            <p>在手机浏览器中打开</p>
+            <p>再使用其他方式支付</p>
+        </div>
+        <button id="btnMobilePayClose" type="button" class="btn-mobilepay-close">
+            <span class="fa fa-check mr5"></span>知道啦
+        </button>
+    </div>
+    <form action="#" id="formUpdateStatus" method="post" novalidate="novalidate">
+        <input data-val="true" data-val-number="字段 凭证Id 必须是一个数字。" data-val-required="请输入凭证Id" id="Id" name="Id" type="hidden" value="1063">
+        <input data-val="true" data-val-number="字段 凭证Id 必须是一个数字。" data-val-required="交易密码" id="Password" name="Password" type="hidden" value="92ce1af6795fb524a3e8aa0bae2b1a2a">
+        <div class="container">
+            <a id="btnQRCode" href="#" class="icon-qrcode">
+                <!-- <img src="./imgs/detailcode1.png"> -->
+            </a>
+            <div class="weui-flex text-center">
+                <div class="weui-flex__item">
+                    <div class="head-img-container">
+
+
+                        <img src="./imgs/user.png" class="head-img">
+
+                    </div>
+                    <div class="user-name" id="cjr"></div>
+                </div>
+                <div class="weui-flex__item to">
+                    <span class="fa fa-angle-double-right mr5"></span>借款给
+                    <span class="fa fa-angle-double-right ml5"></span>
+                </div>
+                <div class="weui-flex__item">
+                    <div class="head-img-container" style="position: relative;">
+                        <img id="imgDebtorHeadImage" src="./imgs/user.png" class="head-img">
+                    </div>
+                    <div class="user-name" id="jkr"></div>
+                </div>
+            </div>
+            <div class="weui-cells mt15">
+                <div class="weui-cell_border"></div>
+                <div class="weui-cell">
+                    <div class="weui-cell__bd">借款日期</div>
+                    <div class="weui-cell__ft text-dark" id="jkrq"></div>
+                </div>
+                <div class="weui-cell">
+                    <div class="weui-cell__bd">还款日期</div>
+                    <div class="weui-cell__ft text-dark" id="hkrq"></div>
+                </div>
+                <div class="weui-cell">
+                    <div class="weui-cell__bd">借款金额</div>
+                    <div class="weui-cell__ft text-currency">
+                        <span id="jkje">
+                        </span>
+                        <span class="text-xs">元</span>
+                    </div>
+                </div>
+                <div class="weui-cell">
+                    <div class="weui-cell__bd">年化利率</div>
+                    <div class="weui-cell__ft text-dark">
+                        <span id="nhll"></span>
+                        <!-- <span class="text-xs">%</span> -->
+                    </div>
+                </div>
+                <!-- <div class="weui-cell">
+                    <div class="weui-cell__bd">本息共计</div>
+                    <div class="weui-cell__ft text-currency">
+                        <span id="bxgj"></span>
+                        <span class="text-xs">元</span>
+                    </div>
+                </div> -->
+                <div class="weui-cell">
+                    <div class="weui-cell__bd">借款用途</div>
+                    <div class="weui-cell__ft text-dark" id="jkyt"></div>
+                </div>
+                <div class="weui-cell_border"></div>
+                <div class="weui-cell">
+                    <div class="weui-cell__bd">平台服务费</div>
+                    <div class="weui-cell__ft text-dark">
+                        <span id="ptfwf"></span>
+                        <span class="text-xs">元</span>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <div id="divAction" class="weui-submit-area">
+            <div class="weui-flex__item weui-flex__item-2">
+                <button id="btnShare" class="btn btn-success" type="button" data-status="Destroyed">
+                    分享凭证
+                </button>
+            </div>
+
+        </div>
+
+
+
+
+
+    </form>
+
+    <link rel="stylesheet" type="text/css" href="./css/weui.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/jquery-weui.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/ym.ypz.mobile.css">
+    <link rel="stylesheet" type="text/css" href="./css/ym.ypz.mobile.extension.css">
+    <link rel="stylesheet" type="text/css" href="./css/renderIOU.css">
+    <link rel="stylesheet" type="text/css" href="./css/info.css">
+    <script type="text/javascript" src="./js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.transit.js"></script>
+    <script type="text/javascript" src="./js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.validate.unobtrusive.min.js"></script>
+    <script type="text/javascript" src="./js/jweixin-1.2.0.js"></script>
+    <script type="text/javascript" src="./js/jquery-weui.min.js"></script>
+    <script type="text/javascript" src="./js/crypto-js.js"></script>
+    <script type="text/javascript" src="./js/ym.ypz.jquery.validate.unobtrusive.js"></script>
+    <script type="text/javascript" src="./js/ym.ypz.enum.mapping.js"></script>
+    <script type="text/javascript" src="./js/ym.ypz.form.js"></script>
+    <script type="text/javascript" src="./js/ym.ypz.mobile.js"></script>
+    <script type="text/javascript" src="./js/md5.js"></script>
+    <script type="text/javascript" src="./js/layer.js"></script>
+    <script type="text/javascript" src="./js/detail.js"></script>
+
+
+    <script type="text/javascript">
+        var Environment = 'PRO';
+        var WechatParameters = 'd3hjMWY4YzMxMjljMDg4YTNhfHx8';
+    </script>
+    <script>
+        wx.config({
+            debug: false,
+            appId: 'wx69653181c71e75d7',
+            timestamp: parseInt("1538901104288", 10),
+            nonceStr: '6cJtUrCu7GCO1QKuRp',
+            signature: '0209a7f267e1b342157573c4c09066b5c8d635f1',
+            jsApiList: ["checkJsApi", "onMenuShareAppMessage"]
+        });
+        wx.hideMenuItems({
+            menuList: ["menuItem:share:qq", "menuItem:share:weiboApp", "menuItem:share:facebook", "menuItem:share:QZone", "menuItem:share:timeline"] // 要隐藏的菜单项，只能隐藏“传播类”和“保护类”按钮，所有menu项见附录3
+        });
+        wx.checkJsApi({
+            jsApiList: [
+                'checkJsApi',
+                'onMenuShareAppMessage'
+            ],
+            success: function(res) {}
+        });
+        wx.ready(function() {
+            //分享给微信朋友
+            wx.onMenuShareAppMessage({
+                title: "钱借到服务", // 分享标题
+                desc: "钱借到服务为您借贷分忧 金额：" + $("#jkje").html() + "元 利率：" + $("#nhll").html() + " 用途：" + $("#jkyt").html(), // 分享描述
+                link: "", // 分享链接
+                imgUrl: "./imgs/logo.jpg", // 分享图标该图标大于300*300
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function() {
+                    alert('发送给朋友成功');
+                },
+                cancel: function() {
+                    alert('取消发送给朋友');
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

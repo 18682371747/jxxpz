@@ -1,0 +1,224 @@
+.menus {
+    position: absolute;
+    top: .8rem;
+    right: .8rem;
+    font-size: 1rem
+}
+
+.menus a {
+    color: white;
+    margin-right: .7rem
+}
+
+.menus a:last-child {
+    margin-right: 0rem
+}
+
+.img-content {
+    line-height: 0
+}
+
+.m-navbar {
+    height: 55px;
+    padding: 15px 0;
+    position: relative;
+    background-color: #fff;
+    border-bottom: 1px solid #e5e5e5
+}
+
+.m-navbar .stick {
+    position: absolute;
+    top: 30px;
+    left: 45px;
+    right: 20px;
+    height: 1px;
+    background-color: #d7dbe0;
+    width: 280px;
+}
+
+.m-navbar .stick .bar {
+    height: 1px;
+    background-color: #aeeeac
+}
+
+.m-navbar ul {
+    margin-top: 0;
+    margin-bottom: 0
+}
+
+.m-navbar ul {
+    list-style: none;
+    padding-left: 0
+}
+
+.m-navbar li {
+    top: 30px;
+    width: 33%;
+    float: left;
+    text-align: center;
+    position: relative;
+}
+
+.m-navbar li.status-curr:before {
+    border: 0
+}
+
+.m-navbar li.status-ok:before,
+.m-navbar li:after,
+.m-navbar li:before {
+    content: "";
+    display: inline-block;
+    width: 40px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 0;
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    background: #fff
+}
+
+.m-navbar li.status-curr:after {
+    border: 2px solid #1284fd
+}
+
+.m-navbar li.status-ok:before,
+.m-navbar li:after,
+.m-navbar li:before {
+    content: "";
+    display: inline-block;
+    width: 40px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 0;
+    position: absolute;
+    top: -27px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    background: #fff
+}
+
+.m-navbar li:after {
+    width: 24px;
+    height: 24px;
+    top: -28px;
+    border: 2px solid #d7dbe0;
+}
+
+.m-navbar li span {
+    color: #bbb;
+    font-size: 14px;
+    line-height: 28px
+}
+
+.m-navbar li.status-curr span,
+.m-navbar li.status-ok span {
+    color: #1284fd
+}
+
+form {
+    display: none
+}
+
+form.form-action {
+    display: block
+}
+
+.auditing.hide {
+    display: none
+}
+
+.auditing {
+    display: block;
+    padding-bottom: 15px
+}
+
+.auditing .auditing-icon {
+    margin: 0 auto
+}
+
+.auditing .auditing-desc {
+    text-align: center;
+    font-size: .8rem
+}
+
+.weui-uploader__input-box {
+    width: 8rem
+}
+
+.weui-uploader__file {
+    width: 8rem
+}
+
+.weui-progress__bar {
+    margin: .3rem 0;
+    width: 8rem;
+    text-align: center;
+    display: none
+}
+
+.weui-progress__bar span {
+    color: #999
+}
+
+.weui-cell {
+    padding: 15px
+}
+
+.weui-cells__title {
+    margin-top: .77em;
+    margin-bottom: .3em;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: #999;
+    font-size: 14px;
+}
+
+.weui-label {
+    width: 105px;
+}
+
+.weui-btn-area {
+    margin: 1.17647059em 15px .3em;
+}
+
+.background {
+    display: block;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    filter: alpha(opacity=40);
+    background: #666;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+}
+
+.progressBar {
+    border: solid 2px #86A5AD;
+    background: white url(../imgs/loading.gif) no-repeat 10px 10px;
+}
+
+.progressBar {
+    display: block;
+    width: 148px;
+    height: 28px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -74px;
+    margin-top: -14px;
+    padding: 10px 10px 10px 50px;
+    text-align: left;
+    line-height: 27px;
+    font-weight: bold;
+    position: absolute;
+    z-index: 2001;
+    font-size: 12px;
+}

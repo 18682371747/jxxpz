@@ -1,0 +1,116 @@
+.container {
+	display: block;
+	margin: 10px;
+	margin-top: 40px;
+	margin-bottom: 80px;
+	padding: 15px;
+	background-color: #fff;
+	position: relative;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+	-moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25)
+}
+
+.container .head-img {
+	position: relative;
+	top: -50px;
+	left: 50%;
+	margin-left: -33px;
+	width: 60px;
+	height: 60px;
+	border: 6px solid #efefef;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none
+}
+
+.container .signature-img {
+	height: 30px;
+	border: 1px solid #dedede;
+	margin-right: 10px
+}
+
+.container .weui-cells {
+	margin-top: -40px
+}
+
+.container .weui-cells:before, .container .weui-cells:after, .container .weui-cells .weui-cell:before
+	{
+	content: none
+}
+
+.container .weui-cells .weui-cell {
+	padding: 10px 0
+}
+
+.container .weui-cells .weui-cell * {
+	font-size: 15px !important
+}
+
+.container .weui-cells .weui-cell .weui-cell__ft .weui-vcode-icon {
+	height: 21px;
+	line-height: 21px;
+	padding: 0
+}
+
+.container .weui-cells .weui-cell .weui-cell__ft .weui-vcode-icon.text-currency
+	{
+	font-size: 12px !important
+}
+
+.container .weui-cells .weui-cell .text-xs {
+	font-size: 10px !important
+}
+
+.container .weui-cells .weui-cell_border {
+	border-top: 1px dashed #dedede;
+	height: 0;
+	margin: 4px 0
+}
+
+.container .weui-cells .weui-cell_message {
+	text-align: right;
+	margin-top: -8px;
+	margin-bottom: 8px;
+	line-height: 1
+}
+
+.container .weui-cells .weui-cell_message span.default {
+	font-size: 12px;
+	color: #9a9a9a
+}
+
+.container .weui-cells .weui-cell_agreement span, .container .weui-cells .weui-cell_agreement a
+	{
+	font-size: 12px !important
+}
+
+.weui-submit-area {
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #fff;
+	padding: 15px 10px 10px;
+	border-top: 1px solid #dedede;
+	-webkit-box-shadow: 0 -4px 4px rgba(0, 0, 0, 0.05);
+	-moz-box-shadow: 0 -4px 4px rgba(0, 0, 0, 0.05);
+	box-shadow: 0 -4px 4px rgba(0, 0, 0, 0.05)
+}
+
+.dialog {
+	display: block;
+	margin: 10px;
+	background-color: #fff;
+	position: relative;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25)
+}

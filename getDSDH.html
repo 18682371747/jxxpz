@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html class="pixel-ratio-1 pixel-ratio-2 retina android android-6 android-6-0">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="theme-color" content="#1f212f">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="cache-control" content="max-age=864000">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="author" content="">
+    <meta name="description" content="">
+    <meta itemprop="name" content="">
+    <meta itemprop="description" content="">
+    <title>我的待收待还</title>
+</head>
+
+<body>
+    <input id="hIndex" type="hidden" value="0">
+    <div class="header">
+        <div class="name"></div>
+        <div class="weui-flex finance">
+            <div class="weui-flex__item">
+                <div class="text-currency" id="TotalReceivable">0.00</div>
+                <div class="text-xs">待收总额(元)</div>
+            </div>
+            <div class="weui-flex__item">
+                <div class="text-currency" id="TotalNotRepayable">0.00</div>
+                <div class="text-xs">待还总额(元)</div>
+            </div>
+        </div>
+    </div>
+    <div class="tabs-container">
+        <div id="divTabs" class="weui-flex tabs">
+            <div class="weui-flex__item">
+                <a href="javascript:void(0);">待收</a>
+            </div>
+            <div class="weui-flex__item active">
+                <a href="javascript:void(0);">待还</a>
+            </div>
+            <div class="border" style="left: 0%;"></div>
+        </div>
+    </div>
+    <div id="divDataList" class="datalist">
+        <div id="divReceivable" class="hide" style="display: none;">
+
+            <div class="no-data">
+                <img src="./imgs/data-none.png">
+                <div>暂无数据</div>
+            </div>
+
+
+        </div>
+        <div id="divRepayable" class="hide" style="display: block;">
+
+            <div class="no-data">
+                <img src="./imgs/data-none.png">
+                <div>暂无数据</div>
+            </div>
+
+
+        </div>
+    </div>
+    <!--[if lt IE 9]>
+		<script type="text/javascript" src="/Content/Plugins/respond/respond.min.js?v=3D604D23C558DF5849AFEC69C87C13CE"></script>
+		<script type="text/javascript" src="/Content/Plugins/excanvas/excanvas.min.js?v=EE9E3FEE14270B7B27FCAA0E2CF2E042"></script>
+		<![endif]-->
+    <link rel="stylesheet" type="text/css" href="./css/weui.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/jquery-weui.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/ym.ypz.mobile.css">
+    <link rel="stylesheet" type="text/css" href="./css/ym.ypz.mobile.extension.css">
+    <link rel="stylesheet" type="text/css" href="./css/renderIOU.css">
+    <link rel="stylesheet" type="text/css" href="./css/info.css">
+    <script type="text/javascript" src="./js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.transit.js"></script>
+    <script type="text/javascript" src="./js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.validate.unobtrusive.min.js"></script>
+    <script type="text/javascript" src="./js/jweixin-1.2.0.js"></script>
+    <script type="text/javascript" src="./js/jquery-weui.min.js"></script>
+    <script type="text/javascript" src="./js/crypto-js.js"></script>
+    <script type="text/javascript" src="./js/ym.ypz.jquery.validate.unobtrusive.js"></script>
+    <script type="text/javascript" src="./js/ym.ypz.enum.mapping.js"></script>
+    <script type="text/javascript" src="./js/ym.ypz.form.js"></script>
+    <script type="text/javascript" src="./js/ym.ypz.mobile.js"></script>
+    <script type="text/javascript" src="./js/renderIOU.js"></script>
+    <script type="text/javascript">
+        var Environment = 'PRO';
+        var WechatParameters = 'd3hjMWY4YzMxMjljMDg4YTNhfHx8';
+    </script>
+    <script type="text/javascript" src="./js/info.js"></script>
+
+</body>
+
+</html>

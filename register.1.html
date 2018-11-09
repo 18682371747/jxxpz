@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html class="pixel-ratio-1 pixel-ratio-2 retina android android-6 android-6-0">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="theme-color" content="#1f212f">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="cache-control" content="max-age=864000">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="author" content="">
+    <meta name="description" content="">
+    <meta itemprop="name" content="">
+    <meta itemprop="description" content="">
+    <title>聚鑫金服</title>
+</head>
+
+<body>
+    <div class="logo">
+        <img src="./imgs/logo.png">
+        <h2>聚鑫白条</h2>
+        <div>动动手指  现金马上到账</div>
+    </div>
+    <form action="#" id="formRegister" method="POST" novalidate="novalidate">
+        <input type="hidden" id="extendNo" name="extendNo" value="">
+        <div class="row">
+            <input class="form-control" data-val="true" data-val-regex="手机号格式错误" data-val-regex-pattern="^((\+?\d{2} )?[1-9]\d{10}(-\d{1,4})?)?$"
+                data-val-required="请输入手机号" data-val-textlength="请勿超过32个字符" data-val-textlength-doublebytelength="2"
+                data-val-textlength-maximumlength="32" data-val-textlength-minimumlength="0" id="CellPhoneNumber" name="CellPhoneNumber"
+                placeholder="请输入手机号" style="padding-right: 90px;" type="text" value="">
+        </div>
+        <!-- <div class="row">
+      <input class="form-control" data-val="true" data-val-regex="请输入验证码" data-val-requiredifnotempty="请输入验证码"
+        data-val-requiredifnotempty-propertyname="CellPhoneNumber" id="CaptchaCode" name="CaptchaCode" placeholder="请输入验证码"
+        style="padding-right: 100px;" type="number" value="" autocomplete="return false;" onpaste="return false;"
+        oncontextmenu="return false;" oncopy="return false;" oncut="return false;">
+      <a id="linkCaptchaCode" href="javascript:void(0);">获取验证码</a>
+      <input type="hidden" id="smsHidden" name="smsHidden">
+      <span class="field-validation-valid" data-valmsg-for="CaptchaCode" data-valmsg-replace="true"></span>
+    </div> -->
+        <div class="row">
+            <input class="form-control" data-val="true" data-val-identitycode="身份证号码格式错误" data-val-required="请输入身份证号码"
+                data-val-textlength="请勿超过32个字符" data-val-textlength-doublebytelength="2"
+                data-val-textlength-maximumlength="64" data-val-textlength-minimumlength="0" id="IdentityNumber" name="IdentityNumber"
+                placeholder="请输入身份证号码" type="text" value="">
+            <span class="field-validation-valid" data-valmsg-for="IdentityNumber" data-valmsg-replace="true"></span>
+        </div>
+        <div class="row">
+            <input class="form-control" data-val="true" data-val-required="请输入姓名" data-val-textlength="请勿超过128个字符"
+                data-val-textlength-doublebytelength="2" data-val-textlength-maximumlength="128"
+                data-val-textlength-minimumlength="0" id="Name" name="Name" placeholder="请输入姓名" type="text" value="">
+            <span class="field-validation-valid" data-valmsg-for="Name" data-valmsg-replace="true"></span>
+        </div>
+        <div class="row">
+            <input class="form-control" data-val="true" data-val-required="请输入银行卡必须是注册号码 短信预留一致" data-val-textlength="请勿超过128个字符"
+                data-val-textlength-doublebytelength="2" data-val-textlength-maximumlength="128"
+                data-val-textlength-minimumlength="0" id="BankNo" name="BankNo" placeholder="请输入银行卡必须是注册号码 短信预留一致" type="text"
+                value="">
+            <span class="field-validation-valid" data-valmsg-for="BankNo" data-valmsg-replace="true"></span>
+        </div>
+        <div class="row ">
+            <input class="form-control" data-val="true" data-val-password="请输入6位数字的交易密码" data-val-password-pattern="^(\d{6})?$"
+                data-val-required="请输入6位数字的交易密码" id="Password" name="Password" placeholder="请设置交易密码（6位数字）" type="password">
+            <span class="field-validation-valid" data-valmsg-for="Password" data-valmsg-replace="true"></span>
+        </div>
+        <div class="row mb5">
+            <select class="form-control" data-val-required="请选择通道" id="salesID" name="salesID">
+                <option value="">--请选择通道--</option>
+            </select>
+            <!-- <input class="form-control" data-val="true" data-val-required="请输入业务员ID" data-val-textlength="请勿超过32个字符"
+                                                    data-val-textlength-doublebytelength="2" data-val-textlength-maximumlength="32"
+                                                    data-val-textlength-minimumlength="0"placeholder="请输入业务员ID" type="text"
+                                                    value=""> -->
+            <span class="field-validation-valid" data-valmsg-for="salesID" data-valmsg-replace="true"></span>
+        </div>
+        <div class="tips">为确保安全，平台中所有操作均需要使用该交易密码</div>
+        <div class="tips mt30">我们通过第三方机构对你的信息进行实名核对，核对成功即为你注册钱借到账号</div>
+        <label class="checkbox-primary checkbox-inline">
+            <input id="cbAgreement" type="checkbox" checked="checked">
+            <span style="font-size:13px;">已阅读并接受</span>
+        </label>
+        <a id="linkServiceProtocol" target="_blank" href="http://qianjiedao.tjdzjq.com/mobile/user/agreement" class="text-xs">《钱借到服务协议》</a>
+        <div class="form-group mt10">
+            <button id="registerBtn" type="button" class="btn btn-primary" style="background: red; border-color: red">授权并注册绑定</button>
+        </div>
+    </form>
+    <link rel="stylesheet" type="text/css" href="./css/weui.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/jquery-weui.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/ym.ypz.mobile.css">
+    <link rel="stylesheet" type="text/css" href="./css/ym.ypz.mobile.extension.css">
+    <link rel="stylesheet" type="text/css" href="./css/enter.css">
+    <script type="text/javascript" src="./js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.transit.js"></script>
+    <script type="text/javascript" src="./js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.validate.unobtrusive.min.js"></script>
+    <script type="text/javascript" src="./js/jweixin-1.2.0.js"></script>
+    <script type="text/javascript" src="./js/jquery-weui.min.js"></script>
+    <script type="text/javascript" src="./js/crypto-js.js"></script>
+    <script type="text/javascript" src="./js/ym.ypz.jquery.validate.unobtrusive.js"></script>
+    <script type="text/javascript" src="./js/ym.ypz.enum.mapping.js"></script>
+    <script type="text/javascript" src="./js/ym.ypz.form.js"></script>
+    <script type="text/javascript" src="./js/ym.ypz.mobile.js"></script>
+    <script type="text/javascript" src="./js/md5.js"></script>
+    <script type="text/javascript" src="./js/register.js"></script>
+
+    <script type="text/javascript">
+        var Environment = 'PRO';
+        var WechatParameters = 'd3hjMWY4YzMxMjljMDg4YTNhfHx8';
+        var path = "/SCT";
+        $(document).ready(function () {
+            $("#linkCaptchaCode").click(function () {
+                var phone = $("#CellPhoneNumber").val();
+
+                if (phone == '') {
+                    alert("请输入手机号码!");
+                    return false;
+                }
+
+                var codeStr = Math.round(Math.random() * 100) + "" + Math.round(Math.random() * 100);
+                $("#smsHidden").val(codeStr);
+                // 发送短信
+                $.appAjax({
+                    type: "POST",
+                    url: "../m/sendSms.html",
+                    data: {
+                        phone: $('#CellPhoneNumber').val(),
+                        content: codeStr,
+                    },
+                    onSuccess: function (data) {
+                        if (data.result == 'success') {
+                            alert('短信发送成功！');
+                        } else {
+                            alert('短信发送失败！');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>
